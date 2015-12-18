@@ -34,3 +34,4 @@ lazy val core = (project in file("core")).settings(releaseSettings ++ sonatypeSe
 ): _*)
  .enablePlugins(ScalaJSPlugin)
 
+onLoad in Global := (Command.process("project core", _: State)) compose (onLoad in Global).value
