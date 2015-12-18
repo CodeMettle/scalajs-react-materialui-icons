@@ -2,7 +2,7 @@ import SonatypeKeys._
 import sbt.Keys._
 import sbt._
 
-lazy val core = (project in file("core")).settings(releaseSettings ++ sonatypeSettings ++ Seq(
+lazy val core = (project in file("core")).settings(sonatypeSettings ++ Seq(
   organization := "com.codemettle",
   name := "scalajs-react-materialui-icons",
   description := "Material UI icons for scalajs-react-components",
@@ -29,7 +29,8 @@ lazy val core = (project in file("core")).settings(releaseSettings ++ sonatypeSe
     "com.github.japgolly.scalajs-react" %%% "core" % "0.10.2" % Provided,
     "com.github.chandu0101.scalajs-react-components" %%% "core" % "0.2.0" % Provided
   ),
-  profileName := "com.codemettle"
+  profileName := "com.codemettle",
+  releasePublishArtifactsAction := PgpKeys.publishSigned.value
 ): _*)
  .enablePlugins(ScalaJSPlugin)
 
