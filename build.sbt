@@ -5,7 +5,6 @@ import sbt._
 lazy val core = (project in file("core")).settings(releaseSettings ++ sonatypeSettings ++ Seq(
   organization := "com.codemettle",
   name := "scalajs-react-materialui-icons",
-  version := "0.1.0",
   description := "Material UI icons for scalajs-react-components",
   startYear := Some(2015),
   homepage := Some(url("https://github.com/Codemettle/scalajs-react-materialui-icons")),
